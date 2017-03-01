@@ -93,10 +93,8 @@ set(GENCODE_SM30 -gencode=arch=compute_30,code=sm_30 -gencode=arch=compute_30,co
 set(GENCODE_SM35 -gencode=arch=compute_35,code=sm_35 -gencode=arch=compute_35,code=compute_35)
 set(GENCODE_SM50 -gencode=arch=compute_50,code=sm_50 -gencode=arch=compute_50,code=compute_50)
 set(GENCODE_SM52 -gencode=arch=compute_52,code=sm_52 -gencode=arch=compute_52,code=compute_52)
-set(GENCODE_SM60 -gencode=arch=compute_50,code=sm_60 -gencode=arch=compute_60,code=compute_60)
+set(GENCODE_SM60 -gencode=arch=compute_60,code=sm_60 -gencode=arch=compute_60,code=compute_60)
 set(GENCODE_SM61 -gencode=arch=compute_61,code=sm_61 -gencode=arch=compute_61,code=compute_61)
-
-#set(GENCODE -gencode=arch=compute_20,code=compute_20) # at least generate PTX
 
 option(CUDPP_GENCODE_SM30
        "ON to generate code for Compute Capability 3.0 devices (e.g. Tesla K10)"
@@ -121,6 +119,10 @@ option(CUDPP_GENCODE_SM60
 option(CUDPP_GENCODE_SM61
        "ON to generate code for Compute Capability 6.2 devices (e.g. GeForce GTX 1080)"
        ON)
+
+option(CUDPP_GENCODE_SM61
+       "ON to generate code for Compute Capability 6.1 devices (e.g. GeForce GTX 1050)"
+       OFF)
 
 if (CUDPP_GENCODE_SM30)
   set(GENCODE ${GENCODE} ${GENCODE_SM30})
