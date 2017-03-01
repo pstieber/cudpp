@@ -67,10 +67,6 @@ option(CUDPP_GENCODE_SM50
        "ON to generate code for Compute Capability 5.0 devices (e.g. GeForce GTX 750)"
        OFF)
 
-option(CUDPP_GENCODE_SM50
-       "ON to generate code for Compute Capability 5.0 devices (e.g. GeForce GTX 750)"
-       OFF)
-
 option(CUDPP_GENCODE_SM52
        "ON to generate code for Compute Capability 5.2 devices (e.g. GeForce GTX 950)"
        OFF)
@@ -90,10 +86,6 @@ endif(CUDPP_GENCODE_SM30)
 if (CUDPP_GENCODE_SM35)
   set(GENCODE ${GENCODE} ${GENCODE_SM35})
 endif(CUDPP_GENCODE_SM35)
-
-if (CUDPP_GENCODE_SM50)
-  set(GENCODE ${GENCODE} ${GENCODE_SM50})
-endif(CUDPP_GENCODE_SM50)
 
 if (CUDPP_GENCODE_SM50)
   set(GENCODE ${GENCODE} ${GENCODE_SM50})
@@ -146,7 +138,7 @@ cuda_add_library(cudpp_hash ${LIB_TYPE}
   ${CUHFILES}
   ${HFILES_PUBLIC}
   ${CUFILES}
-  OPTIONS ${GENCODE_SM20} ${VERBOSE_PTXAS}
+  OPTIONS ${GENCODE} ${VERBOSE_PTXAS}
   )
 
 target_link_libraries(cudpp_hash cudpp)
