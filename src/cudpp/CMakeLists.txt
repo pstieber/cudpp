@@ -102,23 +102,19 @@ option(CUDPP_GENCODE_SM30
 
 option(CUDPP_GENCODE_SM35
        "ON to generate code for Compute Capability 3.5 devices (e.g. Tesla K20)"
-       ON)
+       OFF)
 
 option(CUDPP_GENCODE_SM50
        "ON to generate code for Compute Capability 5.0 devices (e.g. GeForce GTX 750)"
-       ON)
+       OFF)
 
 option(CUDPP_GENCODE_SM52
        "ON to generate code for Compute Capability 5.2 devices (e.g. GeForce GTX 950)"
-       ON)
+       OFF)
 
 option(CUDPP_GENCODE_SM60
        "ON to generate code for Compute Capability 6.0 devices (e.g. Tesla P100)"
-       ON)
-
-option(CUDPP_GENCODE_SM61
-       "ON to generate code for Compute Capability 6.2 devices (e.g. GeForce GTX 1080)"
-       ON)
+       OFF)
 
 option(CUDPP_GENCODE_SM61
        "ON to generate code for Compute Capability 6.1 devices (e.g. GeForce GTX 1050)"
